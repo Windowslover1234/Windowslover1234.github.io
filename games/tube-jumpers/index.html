@@ -1,7 +1,12 @@
 <!DOCTYPE HTML>
 <html>
-  <link rel="stylesheet" href="/style.css"> 
+  <head> 
+    <link rel="stylesheet" href="/style.css"> 
     <script src="/UnityProgress.js"></script> 
     <script src="/UnityLoader.js"></script>
-    <script> var gameInstance = UnityLoader.instantiate("gameContainer", "/data/tube-jumpers.json", {onProgress: UnityProgress,Module:{onRuntimeInitialized: function() {UnityProgress(gameInstance, "complete")}}}); </script>  <div class="webgl-content"> <div id="gameContainer" style="width: 100vw; height: 100vh"></div> </div></html>
+    
+  </head>
+    <script> var gameInstance = UnityLoader.instantiate("gameContainer", "Windowslover1234.github.io/games/tube-jumpers/data/tube-jumpers.json", {onProgress: UnityProgress,Module:{onRuntimeInitialized: function() {UnityProgress(gameInstance, "complete")}}}); </script>  
+    <div class="webgl-content"> <div id="gameContainer" style="width: 100vw; height: 100vh"></div> </div>
+</html>
 
