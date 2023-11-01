@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="style.css"> 
     <script src="UnityProgress.js"></script>
     <script src="unityloaderpga2.js"></script> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <script> var gameInstance = UnityLoader.instantiate("gameContainer", "pga_2.json", {onProgress: UnityProgress,Module:{onRuntimeInitialized: function() {UnityProgress(gameInstance, "complete")}}}); </script>
   </head> 
 <body> 
