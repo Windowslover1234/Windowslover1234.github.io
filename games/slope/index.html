@@ -1,9 +1,12 @@
 <!DOCTYPE HTML>
 <html>
   <head> 
-    <link rel="stylesheet" href="/style.css"> 
-    <script src="UnityProgress.js"></script> 
-    <script src="UnityLoader41.js"></script>
+    <link rel="stylesheet" href="style.css"> 
+    <script src="UnityProgress.js"></script>
+    <script src="unityloader41.js"></script> 
+    <script> var gameInstance = UnityLoader.instantiate("gameContainer", "slope.json", {onProgress: UnityProgress,Module:{onRuntimeInitialized: function() {UnityProgress(gameInstance, "complete")}}}); </script> 
+    <div class="webgl-content"> 
+    <div id="gameContainer" style="width: 100vw; height: 100vh"></div> </div>
     <script> var gameInstance = UnityLoader.instantiate("gameContainer", "slope.json", {onProgress: UnityProgress,Module:{onRuntimeInitialized: function() {UnityProgress(gameInstance, "complete")}}}); </script>
     <title>Slope</title>
   </head>
