@@ -3,5 +3,5 @@
   <link rel="stylesheet" href="/style.css"> 
     <script src="/UnityProgress.js"></script> 
     <script src="/UnityLoader.js"></script>
-    <script> var gameInstance = UnityLoader.instantiate("gameContainer", "https://cdn.jsdelivr.net/gh/Ven0mYT/tube-jumpers-ven0m@d7e473d1bbb19c421a23516ef2202bda21e8c3f0/tube-jumpers.json", {onProgress: UnityProgress,Module:{onRuntimeInitialized: function() {UnityProgress(gameInstance, "complete")}}}); </script>  <div class="webgl-content"> <div id="gameContainer" style="width: 100vw; height: 100vh"></div> </div></html>
+    <script> var gameInstance = UnityLoader.instantiate("gameContainer", "/data/tube-jumpers.json", {onProgress: UnityProgress,Module:{onRuntimeInitialized: function() {UnityProgress(gameInstance, "complete")}}}); </script>  <div class="webgl-content"> <div id="gameContainer" style="width: 100vw; height: 100vh"></div> </div></html>
 
