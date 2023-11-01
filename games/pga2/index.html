@@ -3,9 +3,9 @@
   <head> 
     <title> Pixel (Device) Apocolypse </title>
     <link rel="stylesheet" href="/style.css"> 
-    <script src="/UnityProgress.js"></script>
-    <script src="/unityloaderpga2.js"></script> 
-    <script> var gameInstance = UnityLoader.instantiate("gameContainer", "/pga_2.json", {onProgress: UnityProgress,Module:{onRuntimeInitialized: function() {UnityProgress(gameInstance, "complete")}}}); </script>
+    <script src="UnityProgress.js"></script>
+    <script src="unityloaderpga2.js"></script> 
+    <script> var gameInstance = UnityLoader.instantiate("gameContainer", "pga_2.json", {onProgress: UnityProgress,Module:{onRuntimeInitialized: function() {UnityProgress(gameInstance, "complete")}}}); </script>
   </head> 
 <body> 
   <div class="webgl-content"> <div id="gameContainer" style="width: 100vw; height: 100vh"></div> </div> 
