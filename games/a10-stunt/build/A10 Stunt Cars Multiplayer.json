@@ -1,7 +1,7 @@
 {
 "companyName": "mhdhammod",
 "productName": "A10 Stunt Cars Multiplayer",
-"dataUrl": "A10 Stunt Cars Multiplayer.data.unityweb",
+"dataUrl": "https://games.cdn.spilcloud.com/1556263239_A10_Stunt_Cars_Multiplayer_1/Build/A10%20Stunt%20Cars%20Multiplayer.data.unityweb",
 "wasmCodeUrl": "A10 Stunt Cars Multiplayer.wasm.code.unityweb",
 "wasmFrameworkUrl": "A10 Stunt Cars Multiplayer.wasm.framework.unityweb",
 "TOTAL_MEMORY": 268435456,
