@@ -10,7 +10,7 @@ var updatedScreenSize = false;
 var startupTimeStr = "";
 var loadProgressFrac = 0;
 var fakeProgressPercentStart = 80 + Math.random() * 15;
-var PokiSDK = core.js
+var PokiSDK = " ";
 window.addEventListener('DOMContentLoaded', domContentLoaded);
 window.addEventListener('load', function() {
     console.log("Load event received");
