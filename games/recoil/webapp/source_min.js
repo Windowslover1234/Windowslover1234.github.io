@@ -21,6 +21,7 @@ gameStarted=true;if(!updatedScreenSize){resizeCanvas(true);}}catch(err){if(!show
 if(!foundModuleAsm){additionalInfo+="Could not find Module.asm";}
 console.log(`Error when starting game. Try to reload the page. Error message: ${err}. ${additionalInfo}`);showedStartGameError=true;}}}
 var pokiStopped=true;function pokiEnsureStop(){if(!pokiStopped){pokiStopped=true;}}
+var fsSyncStatus = "";
 function pokiEnsureStart(){if(pokiStopped){pokiStopped=false;}}
 var startGameAttempts=0;var tryStartGameTimeout=null;function tryStartGame(){console.log("tryStartGame()",gameReadyToStart);if(gameReadyToStart){return;}
 if(!postRunDone||!theDomLoaded||!pokiInited){startGameAttempts++;if(startGameAttempts==20){return;}
