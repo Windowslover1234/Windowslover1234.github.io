@@ -158,11 +158,11 @@ function initPokiSdk() {
             return _0x140a();
         }
     }
-   // function PokiSDK.init().then(() => {
+    //function PokiSDK.init().then(() => {
         setPokiInited();
-   // }).catch(() => {
+    }().catch(() => {
         setPokiInited();
-    });
+    }();
     PokiSDK.setDebug(pokiDebug);
 }
 
