@@ -1055,116 +1055,141 @@ Module.expectedDataFileDownloads++;
             "start": 329132,
             "end": 329374
         }, {
-            "filename": "/assets/games/61F77B7E06B4DC8D",
+            "filename": "/assets/games/5EA3060C267794F9",
             "start": 329374,
-            "end": 343528
+            "end": 360702
         }, {
             "filename": "/assets/games/menu",
-            "start": 343528,
-            "end": 349123
+            "start": 360702,
+            "end": 366297
+        }, {
+            "filename": "/assets/sounds/125404_clang.wav",
+            "start": 366297,
+            "end": 379369,
+            "audio": 1
         }, {
             "filename": "/assets/sounds/146721_ui_beep.wav",
-            "start": 349123,
-            "end": 353625,
+            "start": 379369,
+            "end": 383871,
+            "audio": 1
+        }, {
+            "filename": "/assets/sounds/188204_scrape.wav",
+            "start": 383871,
+            "end": 415907,
             "audio": 1
         }, {
             "filename": "/assets/sounds/194795_ui_button.wav",
-            "start": 353625,
-            "end": 355727,
+            "start": 415907,
+            "end": 418009,
+            "audio": 1
+        }, {
+            "filename": "/assets/sounds/240566_screenshot_done.wav",
+            "start": 418009,
+            "end": 422163,
+            "audio": 1
+        }, {
+            "filename": "/assets/sounds/249929_splash1.wav",
+            "start": 422163,
+            "end": 433867,
+            "audio": 1
+        }, {
+            "filename": "/assets/sounds/319154_block_open.wav",
+            "start": 433867,
+            "end": 443389,
             "audio": 1
         }, {
             "filename": "/assets/sounds/363090_coin.wav",
-            "start": 355727,
-            "end": 360485,
+            "start": 443389,
+            "end": 448147,
+            "audio": 1
+        }, {
+            "filename": "/assets/sounds/399095_jump.wav",
+            "start": 448147,
+            "end": 453525,
             "audio": 1
         }, {
             "filename": "/assets/sounds/521481_camera.wav",
-            "start": 360485,
-            "end": 375917,
+            "start": 453525,
+            "end": 468957,
             "audio": 1
         }, {
             "filename": "/assets/sounds/chaching.wav",
-            "start": 375917,
-            "end": 425197,
+            "start": 468957,
+            "end": 518237,
             "audio": 1
         }, {
             "filename": "/assets/sounds/coin02_band.wav",
-            "start": 425197,
-            "end": 437181,
+            "start": 518237,
+            "end": 530221,
             "audio": 1
         }, {
             "filename": "/assets/sounds/error1.wav",
-            "start": 437181,
-            "end": 458441,
+            "start": 530221,
+            "end": 551481,
             "audio": 1
         }, {
-            "filename": "/assets/sounds/floor6.wav",
-            "start": 458441,
-            "end": 489465,
-            "audio": 1
-        }, {
-            "filename": "/assets/sounds/iowa_marimba_yarn_c4.wav",
-            "start": 489465,
-            "end": 602841,
+            "filename": "/assets/sounds/iowa_piano_ff_c6.wav",
+            "start": 551481,
+            "end": 796045,
             "audio": 1
         }, {
             "filename": "/assets/views/baloo2.woff",
-            "start": 602841,
-            "end": 626913
+            "start": 796045,
+            "end": 820117
         }, {
             "filename": "/assets/views/block_settings.html",
-            "start": 626913,
-            "end": 628902
+            "start": 820117,
+            "end": 822106
         }, {
             "filename": "/assets/views/common.css",
-            "start": 628902,
-            "end": 634175
+            "start": 822106,
+            "end": 827379
         }, {
             "filename": "/assets/views/common.js",
-            "start": 634175,
-            "end": 641846
+            "start": 827379,
+            "end": 835050
         }, {
             "filename": "/assets/views/confirm_deletion.html",
-            "start": 641846,
-            "end": 644137
+            "start": 835050,
+            "end": 837341
         }, {
             "filename": "/assets/views/create_user.html",
-            "start": 644137,
-            "end": 646295
+            "start": 837341,
+            "end": 839499
         }, {
             "filename": "/assets/views/editor_script.html",
-            "start": 646295,
-            "end": 654305
+            "start": 839499,
+            "end": 847509
         }, {
             "filename": "/assets/views/editor_script_blockly.html",
-            "start": 654305,
-            "end": 666731
+            "start": 847509,
+            "end": 859935
         }, {
             "filename": "/assets/views/game_moderation.html",
-            "start": 666731,
-            "end": 671245
+            "start": 859935,
+            "end": 864449
         }, {
             "filename": "/assets/views/messagebox.html",
-            "start": 671245,
-            "end": 673284
+            "start": 864449,
+            "end": 866488
         }, {
             "filename": "/assets/views/select_level.html",
-            "start": 673284,
-            "end": 685585
+            "start": 866488,
+            "end": 878789
         }, {
             "filename": "/assets/views/show_hint.html",
-            "start": 685585,
-            "end": 687027
+            "start": 878789,
+            "end": 880231
         }, {
             "filename": "/assets/views/sign_in.html",
-            "start": 687027,
-            "end": 689428
+            "start": 880231,
+            "end": 882632
         }, {
             "filename": "/bundle_games.txt",
-            "start": 689428,
-            "end": 689444
+            "start": 882632,
+            "end": 882648
         }],
-        "remote_package_size": 689444
+        "remote_package_size": 882648
     })
 }
 )();
