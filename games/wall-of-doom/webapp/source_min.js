@@ -361,7 +361,7 @@ function initPokiSdk() {
     ).catch(()=>{
         setPokiInited();
     }
-    );
+    )
 }
 function hideOverlay() {
     var playContent = document.getElementById('play_content');
