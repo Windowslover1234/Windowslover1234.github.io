@@ -6932,7 +6932,7 @@ var _glTexSubImage2D = (target,level,xoffset,yoffset,width,height,format,type,pi
             var heap = heapObjectForWebGLType(type);
             GLctx.texSubImage2D(target, level, xoffset, yoffset, width, height, format, type, heap, pixels >> heapAccessShiftForWebGLHeap(heap))
         } else {
-            GLctx.texSubImage2D(target, level, xoffset, yoffset, width, height, format, type, pixels)
+            GLctx.texSubImage2D(target, level, xoffset, yoffset, width, height, format, type, heap, pixels)
         }
         return
     }
@@ -7027,7 +7027,7 @@ var _glUseProgram = program=>{
 }
 ;
 var _glVertexAttribPointer = (index,size,type,normalized,stride,ptr)=>{
-    GLctx.vertexAttribPointer(index, size, type, !!normalized, stride, ptr)
+    GLctx.vertexAttribPointer(index, size, type, normalized, stride, ptr)
 }
 ;
 function _glViewport(x0, x1, x2, x3) {
