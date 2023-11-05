@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<head> <Title>Zuma</Title> <link rel="icon" href="favicon.ico"></head>
+<script>
+    window.RufflePlayer = window.RufflePlayer || {};
+
+    window.addEventListener("DOMContentLoaded", () => {
+        let ruffle = window.RufflePlayer.newest();
+        let player = ruffle.createPlayer();
+        let container = document.getElementById("container");
+        container.appendChild(player);
+        player.load("zuma.swf");
+    });
+</script>
+<script src="/ruffle/ruffle.js"></script>
