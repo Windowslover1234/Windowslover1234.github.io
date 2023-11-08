@@ -1,7 +1,26 @@
-<!DOCTYPE HTML>
-<head> <Title>Zuma</Title> <link rel="icon" href="favicon.ico"></head>
-<object type="application/x-shockwave-flash" width="100%" height="100%"> 
-    <param name="movie" value="https://windowslover1234.github.io/games/zuma/zuma.swf"></param> 
-    <param name="wmode" value="opaque"></param> 
-</object>
-<script src="/games/ruffle/ruffle.js"></script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zuma</title>
+  </head>
+  <body style="margin: 0; padding: 0">
+    <div
+      id="container"
+      style="position: absolute; width: auto; height: auto; inset: 0"
+    ></div>
+    <script src="../ruffle/ruffle.js"></script>
+    <script>
+      window.RufflePlayer = window.RufflePlayer || {};
+      window.addEventListener("load", (event) => {
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        const container = document.getElementById("container");
+        player.style.width = "100%";
+        player.style.height = "100%";
+        container.appendChild(player);
+        player.load("zuma.swf");
+      });
+    </script>
+  </body>
+</html>
