@@ -28,7 +28,7 @@
   </upsell>
   
   <cheats>
-    <enabled>true</enabled>
+    <enabled>false</enabled>
     
     <bind keyCombo="`">globalPause</bind>
     <!-- Framework controls -->
