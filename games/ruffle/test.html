@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Zuma</title>
+    <title>Ruffle Test Area</title>
   </head>
   <body style="margin: 0; padding: 0">
     <div
@@ -12,6 +12,7 @@
     <script src="../ruffle/ruffle.js"></script>
     <script>
       window.RufflePlayer = window.RufflePlayer || {};
+      let swf = prompt(Link to SWF file. Example: windowslover1234.github.io/games/flash/newbird.swf)
       window.addEventListener("load", (event) => {
         const ruffle = window.RufflePlayer.newest();
         const player = ruffle.createPlayer();
