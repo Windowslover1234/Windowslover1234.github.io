@@ -4444,7 +4444,7 @@
                             a)],
                             o)]),
                             navigator.sendBeacon)
-                            //    navigator.sendBeacon("", e);
+                              navigator.sendBeacon("", e);
                             else
                                 try {
                                     (l = new XMLHttpRequest).open("POST", "", !0),
