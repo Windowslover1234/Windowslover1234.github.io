@@ -1,26 +1,370 @@
 <!DOCTYPE html>
+<!-- Created with https://packager.turbowarp.org/ -->
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoldenYoshi924's Game Stash</title>
-  </head>
-  <body>
-    <h1>Welcome to my Game Stash!</h1>
-    <p>These are the Games I have Hosted:</p>
-    <ul>
-      <li><a href="/games/pga2/">Pixel Gun Apocolypse 2</a></li>
-      <li><a href="/games/tube-jumpers/">Tube Jumpers</a></li>
-      <li><a href="/games/monster-tracks/">Monster Tracks</a></li>
-      <li><a href="/games/pvz/">Plants vs. Zombies</a></li>
-      <li><a href="/games/drive-mad/">Drive Mad</a></li>
-      <li><a href="/games/bj2/">Bejeweled 2</a></li>
-      <li><a href="/games/bjt/">Bejeweled Twist</a></li>
-      <li><a href="/games/super-fowlist/">Super Fowlist</a></li>
-      <li><a href="/games/slope/">Slope</a></li>
-      <li><a href="/games/roper/">Roper</a></li>
-      <li><a href="/games/recoil/">Recoil</a></li>
-      <li><a href="/games/zuma/">Zuma</a></li>
-    </ul>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- We only include this to explicitly loosen the CSP of various packager environments. It does not provide any security. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
+  <title>Vectoid TD 3D v1.4</title>
+  <style>
+    body {
+      color: #ffffff;
+      font-family: sans-serif;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    :root, body.is-fullscreen {
+      background-color: #000000;
+    }
+    [hidden] {
+      display: none !important;
+    }
+    h1 {
+      font-weight: normal;
+    }
+    a {
+      color: inherit;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    #app, #loading, #error, #launch {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: default;
+      user-select: none;
+      -webkit-user-select: none;
+      background-color: #000000;
+    }
+    #launch {
+      background-color: rgba(0, 0, 0, 0.7);
+      cursor: pointer;
+    }
+    .green-flag {
+      width: 80px;
+      height: 80px;
+      padding: 16px;
+      border-radius: 100%;
+      background: rgba(255, 255, 255, 0.75);
+      border: 3px solid hsla(0, 100%, 100%, 1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+    }
+    #loading {
+      
+    }
+    .progress-bar-outer {
+      border: 1px solid currentColor;
+      height: 10px;
+      width: 200px;
+      max-width: 200px;
+    }
+    .progress-bar-inner {
+      height: 100%;
+      width: 0;
+      background-color: currentColor;
+    }
+    .loading-text, noscript {
+      font-weight: normal;
+      font-size: 36px;
+      margin: 0 0 16px;
+    }
+    .loading-image {
+      margin: 0 0 16px;
+    }
+    #error-message, #error-stack {
+      font-family: monospace;
+      max-width: 600px;
+      white-space: pre-wrap;
+      user-select: text;
+      -webkit-user-select: text;
+    }
+    #error-stack {
+      text-align: left;
+      max-height: 200px;
+      overflow: auto;
+    }
+    .control-button {
+      width: 2rem;
+      height: 2rem;
+      padding: 0.375rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      user-select: none;
+      -webkit-user-select: none;
+      cursor: pointer;
+      border: 0;
+      border-radius: 4px;
+    }
+    .control-button:hover {
+      background: #ff4c4c26;
+    }
+    .control-button.active {
+      background: #ff4c4c59;
+    }
+    .fullscreen-button {
+      background: white !important;
+    }
+    .standalone-fullscreen-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 0 0 0 4px;
+      padding: 4px;
+      cursor: pointer;
+    }
+    .sc-canvas {
+      cursor: auto;
+    }
+    .sc-monitor-root[data-opcode^="data_"] .sc-monitor-value-color {
+      background-color: #ff8c1a;
+    }
+    .sc-monitor-row-value-outer {
+      background-color: #fc662c;
+    }
+    .sc-monitor-row-value-editing .sc-monitor-row-value-outer {
+      background-color: #e25b27;
+    }
+    
+  </style>
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="data:image/png;base64,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">
+</head>
+<body>
+  <div id="app"></div>
+
+  <div id="launch" class="screen" hidden title="Click to start">
+    <div class="green-flag">
+      <svg viewBox="0 0 16.63 17.5" width="42" height="44">
+        <defs><style>.cls-1,.cls-2{fill:#4cbf56;stroke:#45993d;stroke-linecap:round;stroke-linejoin:round;}.cls-2{stroke-width:1.5px;}</style></defs>
+        <path class="cls-1" d="M.75,2A6.44,6.44,0,0,1,8.44,2h0a6.44,6.44,0,0,0,7.69,0V12.4a6.44,6.44,0,0,1-7.69,0h0a6.44,6.44,0,0,0-7.69,0"/>
+        <line class="cls-2" x1="0.75" y1="16.75" x2="0.75" y2="0.75"/>
+      </svg>
+    </div>
+  </div>
+
+  <div id="loading" class="screen">
+    <noscript>Enable JavaScript</noscript>
+    <h1 class="loading-text">Loading Tunes...</h1>
+    
+    <div class="progress-bar-outer"><div class="progress-bar-inner" id="loading-inner"></div></div>
+  </div>
+
+  <div id="error" class="screen" hidden>
+    <h1>Error</h1>
+    <details>
+      <summary id="error-message"></summary>
+      <p id="error-stack"></p>
+    </details>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const appElement = document.getElementById('app');
+    const launchScreen = document.getElementById('launch');
+    const loadingScreen = document.getElementById('loading');
+    const loadingInner = document.getElementById('loading-inner');
+    const errorScreen = document.getElementById('error');
+    const errorScreenMessage = document.getElementById('error-message');
+    const errorScreenStack = document.getElementById('error-stack');
+
+    const handleError = (error) => {
+      console.error(error);
+      if (!errorScreen.hidden) return;
+      errorScreen.hidden = false;
+      errorScreenMessage.textContent = '' + error;
+      let debug = error && error.stack || 'no stack';
+      debug += '\nUser agent: ' + navigator.userAgent;
+      errorScreenStack.textContent = debug;
+    };
+    const setProgress = (progress) => {
+      if (loadingInner) loadingInner.style.width = progress * 100 + '%';
+    };
+    const interpolate = (a, b, t) => a + t * (b - a);
+
+    try {
+      setProgress(0.1);
+
+      const scaffolding = new Scaffolding.Scaffolding();
+      scaffolding.width = 480;
+      scaffolding.height = 360;
+      scaffolding.resizeMode = "preserve-ratio";
+      scaffolding.editableLists = false;
+      scaffolding.usePackagedRuntime = true;
+      scaffolding.setup();
+      scaffolding.appendTo(appElement);
+
+      const vm = scaffolding.vm;
+      window.scaffolding = scaffolding;
+      window.vm = scaffolding.vm;
+      window.Scratch = {
+        vm,
+        renderer: vm.renderer,
+        audioEngine: vm.runtime.audioEngine,
+        bitmapAdapter: vm.runtime.v2BitmapAdapter,
+        videoProvider: vm.runtime.ioDevices.video.provider
+      };
+
+      scaffolding.setUsername("player####".replace(/#/g, () => Math.floor(Math.random() * 10)));
+      scaffolding.setAccentColor("#ff4c4c");
+
+      try {
+        scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "Vectoid"));
+      } catch (error) {
+        console.error(error);
+      }
+
+      if (document.fullscreenEnabled || document.webkitFullscreenEnabled) {
+        let isFullScreen = !!(document.fullscreenElement || document.webkitFullscreenElement);
+        const fullscreenButton = document.createElement('img');
+        fullscreenButton.draggable = false;
+        fullscreenButton.className = 'control-button fullscreen-button';
+        fullscreenButton.addEventListener('click', () => {
+          if (isFullScreen) {
+            if (document.exitFullscreen) {
+              document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+              document.webkitExitFullscreen();
+            }
+          } else {
+            if (document.body.requestFullscreen) {
+              document.body.requestFullscreen();
+            } else if (document.body.webkitRequestFullscreen) {
+              document.body.webkitRequestFullscreen();
+            }
+          }
+        });
+        const otherControlsExist = false;
+        const fillColor = otherControlsExist ? '#575E75' : '#ffffff';
+        const updateFullScreen = () => {
+          isFullScreen = !!(document.fullscreenElement || document.webkitFullscreenElement);
+          document.body.classList.toggle('is-fullscreen', isFullScreen);
+          if (isFullScreen) {
+            fullscreenButton.src = 'data:image/svg+xml,' + encodeURIComponent('<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><g fill="' + fillColor + '" fill-rule="evenodd"><path d="M12.662 3.65l.89.891 3.133-2.374a.815.815 0 011.15.165.819.819 0 010 .986L15.467 6.46l.867.871c.25.25.072.664-.269.664L12.388 8A.397.397 0 0112 7.611V3.92c0-.341.418-.514.662-.27M7.338 16.35l-.89-.89-3.133 2.374a.817.817 0 01-1.15-.166.819.819 0 010-.985l2.37-3.143-.87-.871a.387.387 0 01.27-.664L7.612 12a.397.397 0 01.388.389v3.692a.387.387 0 01-.662.27M7.338 3.65l-.89.891-3.133-2.374a.815.815 0 00-1.15.165.819.819 0 000 .986l2.37 3.142-.87.871a.387.387 0 00.27.664L7.612 8A.397.397 0 008 7.611V3.92a.387.387 0 00-.662-.27M12.662 16.35l.89-.89 3.133 2.374a.817.817 0 001.15-.166.819.819 0 000-.985l-2.368-3.143.867-.871a.387.387 0 00-.269-.664L12.388 12a.397.397 0 00-.388.389v3.692c0 .342.418.514.662.27"/></g></svg>');
+          } else {
+            fullscreenButton.src = 'data:image/svg+xml,' + encodeURIComponent('<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><g fill="' + fillColor + '" fill-rule="evenodd"><path d="M16.338 7.35l-.89-.891-3.133 2.374a.815.815 0 01-1.15-.165.819.819 0 010-.986l2.368-3.142-.867-.871a.387.387 0 01.269-.664L16.612 3a.397.397 0 01.388.389V7.08a.387.387 0 01-.662.27M3.662 12.65l.89.89 3.133-2.374a.817.817 0 011.15.166.819.819 0 010 .985l-2.37 3.143.87.871c.248.25.071.664-.27.664L3.388 17A.397.397 0 013 16.611V12.92c0-.342.418-.514.662-.27M3.662 7.35l.89-.891 3.133 2.374a.815.815 0 001.15-.165.819.819 0 000-.986L6.465 4.54l.87-.871a.387.387 0 00-.27-.664L3.388 3A.397.397 0 003 3.389V7.08c0 .341.418.514.662.27M16.338 12.65l-.89.89-3.133-2.374a.817.817 0 00-1.15.166.819.819 0 000 .985l2.368 3.143-.867.871a.387.387 0 00.269.664l3.677.005a.397.397 0 00.388-.389V12.92a.387.387 0 00-.662-.27"/></g></svg>');
+          }
+        };
+        updateFullScreen();
+        document.addEventListener('fullscreenchange', updateFullScreen);
+        document.addEventListener('webkitfullscreenchange', updateFullScreen);
+        if (otherControlsExist) {
+          fullscreenButton.className = 'control-button fullscreen-button';
+          scaffolding.addControlButton({
+            element: fullscreenButton,
+            where: 'top-right'
+          });
+        } else {
+          fullscreenButton.className = 'standalone-fullscreen-button';
+          document.body.appendChild(fullscreenButton);
+        }
+      }
+
+      vm.setTurboMode(false);
+      if (vm.setInterpolation) vm.setInterpolation(true);
+      if (vm.setFramerate) vm.setFramerate(60);
+      if (vm.renderer.setUseHighQualityRender) vm.renderer.setUseHighQualityRender(true);
+      if (vm.setRuntimeOptions) vm.setRuntimeOptions({
+        fencing: true,
+        miscLimits: true,
+        maxClones: 300,
+      });
+      if (vm.setCompilerOptions) vm.setCompilerOptions({
+        enabled: true,
+        warpTimer: false
+      });
+      if (vm.renderer.setMaxTextureDimension) vm.renderer.setMaxTextureDimension(2048);
+
+      if (typeof ScaffoldingAddons !== 'undefined') {
+        ScaffoldingAddons.run(scaffolding, {"gamepad":false,"pointerlock":false,"specialCloudBehaviors":false,"unsafeCloudBehaviors":false,"pause":false});
+      }
+
+      scaffolding.setExtensionSecurityManager({
+        getSandboxMode: () => 'unsandboxed',
+        canLoadExtensionFromProject: () => true
+      });
+      for (const extension of ["data:text/javascript;,(function(Scratch)%20%7B%20%2F%2F%20Name%3A%20Local%20Storage%0A%2F%2F%20ID%3A%20localstorage%0A%2F%2F%20Description%3A%20Store%20data%20persistently.%20Like%20cookies%2C%20but%20better.%0A%0A%2F*%20generated%20l10n%20code%20*%2FScratch.translate.setup(%7B%22it%22%3A%7B%22_Local%20Storage%22%3A%22Memoria%20Locale%22%2C%22_Local%20Storage%20extension%3A%20project%20must%20run%20the%20%5C%22set%20storage%20namespace%20ID%5C%22%20block%20before%20it%20can%20use%20other%20blocks%22%3A%22Estensione%20Archiviazone%20Locale%3A%20il%20progetto%20deve%20eseguire%20il%20blocco%20%5C%22imposta%20ID%20spazio%20di%20archiviazione%5C%22%20prima%20di%20usare%20gli%20altri%20blocchi%22%2C%22_delete%20all%20keys%22%3A%22cancella%20tutte%20le%20chiavi%22%2C%22_delete%20key%20%5BKEY%5D%22%3A%22cancella%20chiave%20%5BKEY%5D%22%2C%22_get%20key%20%5BKEY%5D%22%3A%22valore%20della%20chiave%20%5BKEY%5D%22%2C%22_project%20title%22%3A%22titolo%20progetto%22%2C%22_score%22%3A%22punteggio%22%2C%22_set%20key%20%5BKEY%5D%20to%20%5BVALUE%5D%22%3A%22imposta%20valore%20chiave%20%5BKEY%5D%20a%20%5BVALUE%5D%22%2C%22_set%20storage%20namespace%20ID%20to%20%5BID%5D%22%3A%22imposta%20ID%20spazio%20archiviazione%20a%20%5BID%5D%22%2C%22_when%20another%20window%20changes%20storage%22%3A%22quando%20altra%20finestra%20cambia%20spazio%20di%20archiviazione%22%7D%2C%22ja%22%3A%7B%22_get%20key%20%5BKEY%5D%22%3A%22%E3%82%AD%E3%83%BC%E3%82%92%E5%8F%96%E5%BE%97%5BKEY%5D%22%7D%2C%22nl%22%3A%7B%22_Local%20Storage%22%3A%22Lokale%20Opslag%22%7D%7D)%3B%2F*%20end%20generated%20l10n%20code%20*%2F(function%20(Scratch)%20%7B%0A%20%20%22use%20strict%22%3B%0A%0A%20%20if%20(!Scratch.extensions.unsandboxed)%20%7B%0A%20%20%20%20throw%20new%20Error(%22Local%20Storage%20must%20be%20run%20unsandboxed%22)%3B%0A%20%20%7D%0A%0A%20%20const%20PREFIX%20%3D%20%22extensions.turbowarp.org%2Flocal-storage%3A%22%3B%0A%20%20let%20namespace%20%3D%20%22%22%3B%0A%20%20const%20getFullStorageKey%20%3D%20()%20%3D%3E%20%60%24%7BPREFIX%7D%24%7Bnamespace%7D%60%3B%0A%0A%20%20let%20lastNamespaceWarning%20%3D%200%3B%0A%0A%20%20const%20validNamespace%20%3D%20()%20%3D%3E%20%7B%0A%20%20%20%20const%20valid%20%3D%20!!namespace%3B%0A%20%20%20%20if%20(!valid%20%26%26%20Date.now()%20-%20lastNamespaceWarning%20%3E%203000)%20%7B%0A%20%20%20%20%20%20alert(%0A%20%20%20%20%20%20%20%20Scratch.translate(%0A%20%20%20%20%20%20%20%20%20%20'Local%20Storage%20extension%3A%20project%20must%20run%20the%20%22set%20storage%20namespace%20ID%22%20block%20before%20it%20can%20use%20other%20blocks'%0A%20%20%20%20%20%20%20%20)%0A%20%20%20%20%20%20)%3B%0A%20%20%20%20%20%20lastNamespaceWarning%20%3D%20Date.now()%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%20valid%3B%0A%20%20%7D%3B%0A%0A%20%20const%20readFromStorage%20%3D%20()%20%3D%3E%20%7B%0A%20%20%20%20try%20%7B%0A%20%20%20%20%20%20%2F%2F%20localStorage%20could%20throw%20if%20unsupported%0A%20%20%20%20%20%20const%20data%20%3D%20localStorage.getItem(getFullStorageKey())%3B%0A%20%20%20%20%20%20if%20(data)%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20JSON.parse%20could%20throw%20if%20data%20is%20invalid%0A%20%20%20%20%20%20%20%20const%20parsed%20%3D%20JSON.parse(data)%3B%0A%20%20%20%20%20%20%20%20if%20(parsed%20%26%26%20parsed.data)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%2F%2F%20Remove%20invalid%20values%20from%20the%20JSON%0A%20%20%20%20%20%20%20%20%20%20const%20processed%20%3D%20%7B%7D%3B%0A%20%20%20%20%20%20%20%20%20%20for%20(const%20%5Bkey%2C%20value%5D%20of%20Object.entries(parsed.data))%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20(%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20typeof%20value%20%3D%3D%3D%20%22number%22%20%7C%7C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20typeof%20value%20%3D%3D%3D%20%22string%22%20%7C%7C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20typeof%20value%20%3D%3D%3D%20%22boolean%22%0A%20%20%20%20%20%20%20%20%20%20%20%20)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20processed%5Bkey%5D%20%3D%20value%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20return%20processed%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%20catch%20(error)%20%7B%0A%20%20%20%20%20%20console.error(%22error%20reading%20from%20local%20storage%22%2C%20error)%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%20%7B%7D%3B%0A%20%20%7D%3B%0A%0A%20%20const%20saveToLocalStorage%20%3D%20(data)%20%3D%3E%20%7B%0A%20%20%20%20try%20%7B%0A%20%20%20%20%20%20if%20(Object.keys(data).length%20%3E%200)%20%7B%0A%20%20%20%20%20%20%20%20localStorage.setItem(%0A%20%20%20%20%20%20%20%20%20%20getFullStorageKey()%2C%0A%20%20%20%20%20%20%20%20%20%20JSON.stringify(%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20time%3A%20Math.round(Date.now()%20%2F%201000)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20data%2C%0A%20%20%20%20%20%20%20%20%20%20%7D)%0A%20%20%20%20%20%20%20%20)%3B%0A%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20localStorage.removeItem(getFullStorageKey())%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%20catch%20(error)%20%7B%0A%20%20%20%20%20%20console.error(%22error%20saving%20to%20locacl%20storage%22%2C%20error)%3B%0A%20%20%20%20%7D%0A%20%20%7D%3B%0A%0A%20%20window.addEventListener(%22storage%22%2C%20(event)%20%3D%3E%20%7B%0A%20%20%20%20if%20(%0A%20%20%20%20%20%20namespace%20%26%26%0A%20%20%20%20%20%20event.key%20%3D%3D%3D%20getFullStorageKey()%20%26%26%0A%20%20%20%20%20%20event.storageArea%20%3D%3D%3D%20localStorage%0A%20%20%20%20)%20%7B%0A%20%20%20%20%20%20Scratch.vm.runtime.startHats(%22localstorage_whenChanged%22)%3B%0A%20%20%20%20%7D%0A%20%20%7D)%3B%0A%0A%20%20Scratch.vm.runtime.on(%22RUNTIME_DISPOSED%22%2C%20()%20%3D%3E%20%7B%0A%20%20%20%20namespace%20%3D%20%22%22%3B%0A%20%20%7D)%3B%0A%0A%20%20class%20LocalStorage%20%7B%0A%20%20%20%20getInfo()%20%7B%0A%20%20%20%20%20%20return%20%7B%0A%20%20%20%20%20%20%20%20id%3A%20%22localstorage%22%2C%0A%20%20%20%20%20%20%20%20name%3A%20Scratch.translate(%22Local%20Storage%22)%2C%0A%20%20%20%20%20%20%20%20docsURI%3A%20%22https%3A%2F%2Fextensions.turbowarp.org%2Flocal-storage%22%2C%0A%20%20%20%20%20%20%20%20blocks%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22setProjectId%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.COMMAND%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20Scratch.translate(%22set%20storage%20namespace%20ID%20to%20%5BID%5D%22)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20ID%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.STRING%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20Scratch.translate(%22project%20title%22)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22get%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.REPORTER%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20Scratch.translate(%22get%20key%20%5BKEY%5D%22)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20KEY%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.STRING%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20Scratch.translate(%22score%22)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22set%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.COMMAND%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20Scratch.translate(%22set%20key%20%5BKEY%5D%20to%20%5BVALUE%5D%22)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20KEY%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.STRING%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20Scratch.translate(%22score%22)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20VALUE%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.STRING%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%221000%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22remove%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.COMMAND%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20Scratch.translate(%22delete%20key%20%5BKEY%5D%22)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20KEY%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.STRING%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20Scratch.translate(%22score%22)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22removeAll%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.COMMAND%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20Scratch.translate(%22delete%20all%20keys%22)%2C%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22whenChanged%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.EVENT%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20Scratch.translate(%22when%20another%20window%20changes%20storage%22)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20isEdgeActivated%3A%20false%2C%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%7D%3B%0A%20%20%20%20%7D%0A%20%20%20%20setProjectId(%7B%20ID%20%7D)%20%7B%0A%20%20%20%20%20%20namespace%20%3D%20Scratch.Cast.toString(ID)%3B%0A%20%20%20%20%7D%0A%20%20%20%20get(%7B%20KEY%20%7D)%20%7B%0A%20%20%20%20%20%20if%20(!validNamespace())%20%7B%0A%20%20%20%20%20%20%20%20return%20%22%22%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20const%20storage%20%3D%20readFromStorage()%3B%0A%20%20%20%20%20%20KEY%20%3D%20Scratch.Cast.toString(KEY)%3B%0A%20%20%20%20%20%20if%20(!Object.prototype.hasOwnProperty.call(storage%2C%20KEY))%20%7B%0A%20%20%20%20%20%20%20%20return%20%22%22%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20return%20storage%5BKEY%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20set(%7B%20KEY%2C%20VALUE%20%7D)%20%7B%0A%20%20%20%20%20%20if%20(!validNamespace())%20%7B%0A%20%20%20%20%20%20%20%20return%20%22%22%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20const%20storage%20%3D%20readFromStorage()%3B%0A%20%20%20%20%20%20storage%5BScratch.Cast.toString(KEY)%5D%20%3D%20VALUE%3B%0A%20%20%20%20%20%20saveToLocalStorage(storage)%3B%0A%20%20%20%20%7D%0A%20%20%20%20remove(%7B%20KEY%20%7D)%20%7B%0A%20%20%20%20%20%20if%20(!validNamespace())%20%7B%0A%20%20%20%20%20%20%20%20return%20%22%22%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20const%20storage%20%3D%20readFromStorage()%3B%0A%20%20%20%20%20%20delete%20storage%5BScratch.Cast.toString(KEY)%5D%3B%0A%20%20%20%20%20%20saveToLocalStorage(storage)%3B%0A%20%20%20%20%7D%0A%20%20%20%20removeAll()%20%7B%0A%20%20%20%20%20%20if%20(!validNamespace())%20%7B%0A%20%20%20%20%20%20%20%20return%20%22%22%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20saveToLocalStorage(%7B%7D)%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20Scratch.extensions.register(new%20LocalStorage())%3B%0A%7D)(Scratch)%3B%0A%20%7D)(Scratch)%3B"]) {
+        vm.extensionManager.loadExtensionURL(extension);
+      }
+
+    } catch (e) {
+      handleError(e);
+    }
+  </script>
+  
+  
+    <script>
+      const getProjectData = (function() {
+        const storage = scaffolding.storage;
+        storage.onprogress = (total, loaded) => {
+          setProgress(interpolate(0.2, 0.98, loaded / total));
+        };
+        
+        storage.addWebStore(
+          [
+            storage.AssetType.ImageVector,
+            storage.AssetType.ImageBitmap,
+            storage.AssetType.Sound,
+            storage.AssetType.Font
+          ].filter(i => i),
+          (asset) => new URL('./assets/' + asset.assetId + '.' + asset.dataFormat, location).href
+        );
+        return () => new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.onload = () => {
+          resolve(xhr.response);
+        };
+        xhr.onerror = () => {
+          if (location.protocol === 'file:') {
+            reject(new Error('Zip environment must be used from a website, not from a file URL.'));
+          } else {
+            reject(new Error('Request to load project data failed.'));
+          }
+        };
+        xhr.onprogress = (e) => {
+          if (e.lengthComputable) {
+            setProgress(interpolate(0.1, 0.2, e.loaded / e.total));
+          }
+        };
+        xhr.responseType = 'arraybuffer';
+        xhr.open('GET', "./assets/project.json");
+        xhr.send();
+      });
+      })();
+    </script>
+  <script>
+    const run = async () => {
+      const projectData = await getProjectData();
+      await scaffolding.loadProject(projectData);
+      setProgress(1);
+      loadingScreen.hidden = true;
+      if (true) {
+        scaffolding.start();
+      } else {
+        launchScreen.hidden = false;
+        launchScreen.addEventListener('click', () => {
+          launchScreen.hidden = true;
+          scaffolding.start();
+        });
+        launchScreen.focus();
+      }
+    };
+    run().catch(handleError);
+  </script>
+</body>
 </html>
