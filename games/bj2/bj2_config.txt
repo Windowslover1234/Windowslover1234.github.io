@@ -3,7 +3,7 @@
 
 //url for upsell buttons
 
-&upselllink=http://www.doublegames.com/download_game/pc/en/bejeweled-2-deluxe&
+&upselllink=https://windowslover1234.github.io/games/bj2/&
 
 
 //turn music in the game true / false
@@ -20,7 +20,7 @@
 //switch cheats on for testing
 //when true can hold shift and click to create bombs, ctrl and click to create hypers
 
-&cheatsOn=true&
+&cheatsOn=false&
 
 
 //all loaded - this config info must be present
