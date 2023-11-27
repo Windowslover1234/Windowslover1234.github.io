@@ -22,6 +22,31 @@
         container.appendChild(player);
         player.load("zuma.swf");
       });
+      window.RufflePlayer.config = {
+    // Options affecting files only
+    "autoplay": "auto",
+    "unmuteOverlay": "visible",
+    "backgroundColor": null,
+    "wmode": "window",
+    "letterbox": "fullscreen",
+    "warnOnUnsupportedContent": false,
+    "contextMenu": "on",
+    "showSwfDownload": false,
+    "upgradeToHttps": window.location.protocol === "https:",
+    "maxExecutionDuration": 15,
+    "logLevel": "error",
+    "base": null,
+    "menu": true,
+    "salign": "",
+    "forceAlign": false,
+    "scale": "showAll",
+    "forceScale": false,
+    "frameRate": null,
+    "quality": "low",
+    "splashScreen": true,
+    "preferredRenderer": webgpu,
+    "favorFlash": true,
+};
     </script>
   </body>
 </html>
