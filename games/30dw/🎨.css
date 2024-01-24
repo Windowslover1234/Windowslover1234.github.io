@@ -542,11 +542,11 @@ input[type=checkbox]:before {
     height: 24px;
     display: inline-block;
     content: "";
-    background-image: url(../assets/check_off.svg);
+    background-image: url(.assets/check_off.svg);
 }
 
 input[type=checkbox]:checked:before {
-    background-image: url(../assets/check_on.svg);
+    background-image: url(.assets/check_on.svg);
 }
 
 input[type=color] {
