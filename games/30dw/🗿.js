@@ -35,7 +35,7 @@ const actions = [
 actions.forEach(x => { $('#actions').append(`<div class="action" action="${x.name}" info="${x.action}" key="${x.shortcut.toUpperCase()}"><img action="${x.name}" alt="${x.action}" src="${x.image}">${x.amount ? "<p>+</p>" : ""}</div>`) })
 
 let soundList = []
-fetch("./sounds.json?a=1").then(x => x.json()).then(list => {
+fetch("sounds.json?a=1").then(x => x.json()).then(list => {
     soundList = list
     $('#iconboxLoading').hide()
     $('#icons').removeClass('loadingIcons')
