@@ -1,5 +1,5 @@
 [
-    { "id": "_pause", "img": "empty", "name": "Silence", "source": "", "tags": ["percussion"] },
+    { "id": "_pause", "img": "empty", "name": "Silence", "source": "", "tags": ["note", "percussion"] },
     { "id": "boom", "name": "Vine Boom", "source": "", "tags": ["percussion"] },
     { "id": "bruh", "name": "Bruh Sound Effect #2", "source": "" },
     { "id": "bong", "name": "Bong", "source": "Taco Bell", "tags": ["note"] },
@@ -11,7 +11,6 @@
     { "id": "boink", "emoji": "💢", "name": "Boink", "source": "Rhythm Heaven" },
     { "id": "fart", "emoji": "💨", "name": "Reverb Fart", "source": "", "tags": ["percussion"] },
     { "id": "error", "emoji": "🚫", "name": "Error", "source": "Windows XP", "tags": ["note"] },
-    { "id": "hl_health", "name": "Medkit Pickup", "source": "Half Life", "tags": ["note"] },
 
     { "id": "kaching", "emoji": "💰", "name": "Kaching", "source": "" },
     { "id": "bonk", "emoji": "🏏", "name": "Bonk", "source": "", "tags": ["percussion"] },
@@ -28,35 +27,48 @@
 
     { "id": "samsung", "emoji": "📲", "name": "Skyline Notification", "source": "Samsung" },
     { "id": "morningflower", "emoji": "🌄", "name": "Morning Flower", "source": "Samsung" },
-    { "id": "hitmarker", "name": "Hitmarker", "source": "Call of Duty", "tags": ["percussion"] },
+    { "id": "shatter", "name": "Glass Shatter", "source": "", "tags": ["percussion"] },
     { "id": "noice", "emoji": "👌", "name": "Noice Click", "source": "Michael Rosen", "tags": ["percussion"] },
     { "id": "slap", "emoji": "🖐", "name": "Slap", "source": "", "tags": ["percussion"] },
     { "id": "krabs", "emoji": "🦀", "name": "Mr. Krabs Walking", "source": "SpongeBob SquarePants" },
     { "id": "wowowow", "emoji": "🚬", "name": "wowowowow", "source": "Kill Bill" },
     { "id": "whatsapp", "name": "Whistle Notification", "source": "Samsung" },
-    { "id": "suspense", "emoji": "😱", "name": "Suspense", "source": "" },
+    { "id": "recordscratch", "emoji": "💿", "name": "Record Scratch", "source": "" },
+    { "id": "pianoriff", "emoji": "🎹", "name": "Piano Riff", "source": "iPhone" },
     { "id": "alert", "emoji": "❗", "name": "Alert", "source": "Metal Gear Solid" },
     { "id": "slip", "name": "Slip", "source": "" },
-    { "id": "explosion", "name": "Explosion", "source": "DELTARUNE" },
 
     { "id": "tada", "emoji": "🎉", "name": "Tada", "source": "Windows 3.1" },
     { "id": "pan", "name": "Frying Pan", "source": "Scott the Woz", "tags": ["percussion"] },
-    { "id": "recordscratch", "emoji": "💿", "name": "Record Scratch", "source": "" },
+    { "id": "gun", "name": "Gun Reload", "source": "" },
+    { "id": "hitmarker", "name": "Hitmarker", "source": "Call of Duty", "tags": ["percussion"] },
+    { "id": "suspense", "emoji": "😱", "name": "Suspense", "source": "" },
+    { "id": "yawn", "emoji": "🥱", "name": "Goofy Yawn", "source": ".mlkey(?)" },
+    { "id": "nerdhorn", "emoji": "🤓", "name": "Old Car Horn", "source": "iPhone" },
+    { "id": "babylaugh", "emoji": "👶", "name": "Baby Laugh", "source": "" },
     { "id": "airhorn", "name": "Airhorn", "source": "", "tags": ["note"] },
+    { "id": "metalpipe", "name": "Metal Pipe", "source": ""  },
+    { "id": "boing", "name": "Boing", "source": "" },
+    { "id": "explosion", "name": "Explosion", "source": "DELTARUNE" },
+
+    { "id": "dodgeball", "name": "Dodgeball", "source": "", "tags": ["percussion"] },
+    { "id": "whipcrack", "name": "Whip Crack", "source": "", "tags": ["percussion"] },
+    { "id": "boowomp", "name": "Boowomp", "source": "SpongeBob SquarePants" },
     { "id": "taiko_don", "name": "Don", "source": "Taiko no Tatsujin", "tags": ["percussion"] },
     { "id": "taiko_ka", "name": "Ka", "source": "Taiko no Tatsujin", "tags": ["percussion"] },
-    { "id": "dimrainsynth", "emoji": "🎹", "name": "Synth", "source": "", "tags": ["note"] },
+    { "id": "puyo", "name": "Puyo", "source": "Puyo Puyo", "tags": ["note"] },
     { "id": "robtopphone", "name": "Xylophone", "source": "", "tags": ["note"] },
     { "id": "waterphone", "emoji": "🎻", "name": "Waterphone", "source": "Hell's Kitchen" },
     { "id": "slapbass", "emoji": "🎸", "name": "Slap Bass", "source": "", "tags": ["note"] },
+    { "id": "dimrainsynth", "name": "Synth", "source": "", "tags": ["note"] },
     { "id": "hoenn", "name": "Hoenn Trumpet", "source": "Pokémon", "tags": ["note"] },
     { "id": "zunpet", "emoji": "🎺", "name": "ZUNpet", "source": "Touhou", "tags": ["note"] },
 
-    { "id": "gun", "name": "Gun Reload", "source": "" },
-    { "id": "dodgeball", "name": "Dodgeball", "source": "", "tags": ["percussion"] },
-    { "id": "whipcrack", "name": "Whip Crack", "source": "", "tags": ["percussion"] },
+    { "id": "oof", "name": "Roblox Oof", "source": "it's a long story" },
+    { "id": "steve_oof", "name": "Steve Oof", "source": "Minecraft" },
     { "id": "gnome", "name": "Gnome", "source": "You've Been Gnomed" },
     { "id": "nope", "name": "nope.avi", "source": "Team Fortress 2" },
+    { "id": "tf2_crit", "name": "Critical Hit", "source": "Team Fortress 2", "tags": ["percussion"] },
     { "id": "mrbeast", "name": "MR BEAST", "source": "Freshy Kanal" },
     { "id": "obama", "name": "BARACK OBAMA", "source": "ERB", "tags": ["note"] },
     { "id": "op", "name": "op", "source": "Psy" },
@@ -65,7 +77,7 @@
     { "id": "21", "name": "21", "source": "DREHYPEMSU" },
     { "id": "americano", "name": "dog dancing we no speak americano", "source": "Unknown" },
 
-    { "id": "oof", "name": "Oof", "source": "Roblox" },
+    { "id": "taunt", "name": "Taunt", "source": "Pizza Tower", "tags": ["note"] },
     { "id": "subaluwa", "name": "Subaluwa", "source": "Ed, Edd n Eddy" },
     { "id": "necoarc", "name": "Neco-Arc", "source": "Carnival Phantasm" },
     { "id": "samurai", "name": "Samurai Techno", "source": "Rhythm Doctor", "tags": ["note"] },
@@ -194,7 +206,7 @@
     { "id": "minecraft_explosion", "name": "Explosion", "source": "Minecraft" },
     { "id": "minecraft_anvil", "name": "Anvil", "source": "Minecraft" },
     { "id": "minecraft_bell", "name": "Bell", "source": "Minecraft", "tags": ["note"] },
-    
+
     { "id": "noteblock_harp", "name": "Note Block - Harp", "source": "Minecraft", "tags": ["note"] },
     { "id": "noteblock_bass", "name": "Note Block - Bass", "source": "Minecraft", "tags": ["note"] },
     { "id": "noteblock_snare", "name": "Note Block - Snare", "source": "Minecraft", "tags": ["percussion"] },
@@ -206,5 +218,7 @@
     { "id": "noteblock_xylophone", "name": "Note Block - Xylophone", "source": "Minecraft", "tags": ["note"] },
     { "id": "noteblock_guitar", "name": "Note Block - Guitar", "source": "Minecraft", "tags": ["note"] },
     { "id": "noteblock_flute", "name": "Note Block - Flute", "source": "Minecraft", "tags": ["note"] },
-    { "id": "noteblock_pling", "name": "Note Block - Pling", "source": "Minecraft", "tags": ["note"] }
+    { "id": "noteblock_pling", "name": "Note Block - Pling", "source": "Minecraft", "tags": ["note"] },
+
+    { "id": "fireinthehole", "name": "FIRE IN THE HOLE", "source": "Geometry Dash" }
 ]
