@@ -205,6 +205,6 @@
     { "id": "noteblock_xylophone", "name": "Note Block - Xylophone", "source": "Minecraft", "tags": ["note"] },
     { "id": "noteblock_guitar", "name": "Note Block - Guitar", "source": "Minecraft", "tags": ["note"] },
     { "id": "noteblock_flute", "name": "Note Block - Flute", "source": "Minecraft", "tags": ["note"] },
-    { "id": "noteblock_pling", "name": "Note Block - Pling", "source": "Minecraft", "tags": ["note"] }
-    { "id": "hl_health", "name": "Medkit Pickup", "source": "Half Life", "tags": ["note"] },
+    { "id": "noteblock_pling", "name": "Note Block - Pling", "source": "Minecraft", "tags": ["note"] },
+    { "id": "hl_health", "name": "Medkit Pickup", "source": "Half Life", "tags": ["note"] }
 ]
