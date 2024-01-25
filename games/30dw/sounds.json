@@ -11,6 +11,7 @@
     { "id": "boink", "emoji": "💢", "name": "Boink", "source": "Rhythm Heaven" },
     { "id": "fart", "emoji": "💨", "name": "Reverb Fart", "source": "", "tags": ["percussion"] },
     { "id": "error", "emoji": "🚫", "name": "Error", "source": "Windows XP", "tags": ["note"] },
+    { "id": "hl_health", "name": "Medkit Pickup", "source": "Half Life", "tags": ["note"] },
 
     { "id": "kaching", "emoji": "💰", "name": "Kaching", "source": "" },
     { "id": "bonk", "emoji": "🏏", "name": "Bonk", "source": "", "tags": ["percussion"] },
@@ -205,6 +206,5 @@
     { "id": "noteblock_xylophone", "name": "Note Block - Xylophone", "source": "Minecraft", "tags": ["note"] },
     { "id": "noteblock_guitar", "name": "Note Block - Guitar", "source": "Minecraft", "tags": ["note"] },
     { "id": "noteblock_flute", "name": "Note Block - Flute", "source": "Minecraft", "tags": ["note"] },
-    { "id": "noteblock_pling", "name": "Note Block - Pling", "source": "Minecraft", "tags": ["note"] },
-    { "id": "hl_health", "name": "Medkit Pickup", "source": "Half Life", "tags": ["note"] },
+    { "id": "noteblock_pling", "name": "Note Block - Pling", "source": "Minecraft", "tags": ["note"] }
 ]
