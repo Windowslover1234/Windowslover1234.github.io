@@ -1,5 +1,5 @@
 let filename = "sequence"
-let extension = ".ðŸ—¿"
+let extension = ".🗿"
 
 function enableNewSaving() {
     sexySaving = true
@@ -260,7 +260,7 @@ let unsavedChanges = false
 $('#sequence').on('DOMSubtreeModified', function() { setUnsavedChanges(true) });
 window.onbeforeunload = function(e) {
     if (unsavedChanges && $('#sequence').children().length && settings.exitConfirmation) {
-        e.returnValue = "ðŸ—¿";
+        e.returnValue = "🗿";
         return cancel()
     }
 };
