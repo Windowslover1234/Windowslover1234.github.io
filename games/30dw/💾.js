@@ -1,5 +1,5 @@
 let filename = "sequence"
-let extension = ".🗿"
+let extension = ".ðŸ—¿"
 
 function enableNewSaving() {
     sexySaving = true
@@ -190,7 +190,8 @@ function loadSequence(data) {
                         element.append(`<p>${pitchVal > 0 ? "+" : ""}${pitchVal}</p>`)
                     }
 
-                    if (volVal) {
+                    if (volVal || volVal === 0
+                        ) {
                         element.attr('vol', volVal)
                         element.append(`<vol>${volVal}%</vol>`)
                     }
@@ -259,7 +260,7 @@ let unsavedChanges = false
 $('#sequence').on('DOMSubtreeModified', function() { setUnsavedChanges(true) });
 window.onbeforeunload = function(e) {
     if (unsavedChanges && $('#sequence').children().length && settings.exitConfirmation) {
-        e.returnValue = "🗿";
+        e.returnValue = "ðŸ—¿";
         return cancel()
     }
 };
