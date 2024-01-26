@@ -34,6 +34,7 @@
     { "id": "krabs", "emoji": "🦀", "name": "Mr. Krabs Walking", "source": "SpongeBob SquarePants" },
     { "id": "wowowow", "emoji": "🚬", "name": "wowowowow", "source": "Kill Bill" },
     { "id": "whatsapp", "name": "Whistle Notification", "source": "Samsung" },
+    { "id": "yawn", "emoji": "🥱", "name": "Goofy Yawn", "source": ".mlkey(?)" },
     { "id": "suspense", "emoji": "😱", "name": "Suspense", "source": "" },
     { "id": "alert", "emoji": "❗", "name": "Alert", "source": "Metal Gear Solid" },
     { "id": "slip", "name": "Slip", "source": "" },
