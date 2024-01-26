@@ -54,6 +54,7 @@
     { "id": "zunpet", "emoji": "🎺", "name": "ZUNpet", "source": "Touhou", "tags": ["note"] },
 
     { "id": "gun", "name": "Gun Reload", "source": "" },
+    { "id": "revolver_spin", "name": "Revolver Cylinder Spin", "source": "" },
     { "id": "dodgeball", "name": "Dodgeball", "source": "", "tags": ["percussion"] },
     { "id": "whipcrack", "name": "Whip Crack", "source": "", "tags": ["percussion"] },
     { "id": "gnome", "name": "Gnome", "source": "You've Been Gnomed" },
