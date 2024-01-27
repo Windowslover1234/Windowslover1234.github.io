@@ -57,6 +57,7 @@
     { "id": "revolver_spin", "name": "Revolver Cylinder Spin", "source": "" },
     { "id": "dodgeball", "name": "Dodgeball", "source": "", "tags": ["percussion"] },
     { "id": "whipcrack", "name": "Whip Crack", "source": "", "tags": ["percussion"] },
+    { "id": "boowomp", "name": "Boowomp", "source": "SpongeBob SquarePants" },
     { "id": "gnome", "name": "Gnome", "source": "You've Been Gnomed" },
     { "id": "nope", "name": "nope.avi", "source": "Team Fortress 2" },
     { "id": "mrbeast", "name": "MR BEAST", "source": "Freshy Kanal" },
