@@ -215,6 +215,6 @@
     { "id": "noteblock_flute", "name": "Note Block - Flute", "source": "Minecraft", "tags": ["note"] },
     { "id": "noteblock_pling", "name": "Note Block - Pling", "source": "Minecraft", "tags": ["note"] },
 
-    { "id": "fireinthehole", "name": "FIRE IN THE HOLE", "source": "Geometry Dash" },
-    { "id": "put_the_stinky_on_him", "name": "I Put The Stinky on Him", "source": "LilGasmask666" }
+    { "id": "put_the_stinky_on_him", "name": "I Put The Stinky on Him", "source": "LilGasmask666" },
+    { "id": "fireinthehole", "name": "FIRE IN THE HOLE", "source": "Geometry Dash" }
 ]
