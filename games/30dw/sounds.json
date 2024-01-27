@@ -60,6 +60,7 @@
     { "id": "boowomp", "name": "Boowomp", "source": "SpongeBob SquarePants" },
     { "id": "gnome", "name": "Gnome", "source": "You've Been Gnomed" },
     { "id": "nope", "name": "nope.avi", "source": "Team Fortress 2" },
+    { "id": "tf2_crit", "name": "Critical Hit", "source": "Team Fortress 2", "tags": ["percussion"] },
     { "id": "mrbeast", "name": "MR BEAST", "source": "Freshy Kanal" },
     { "id": "obama", "name": "BARACK OBAMA", "source": "ERB", "tags": ["note"] },
     { "id": "op", "name": "op", "source": "Psy" },
@@ -68,7 +69,8 @@
     { "id": "21", "name": "21", "source": "DREHYPEMSU" },
     { "id": "americano", "name": "dog dancing we no speak americano", "source": "Unknown" },
 
-    { "id": "oof", "name": "Oof", "source": "Roblox" },
+    { "id": "oof", "name": "Roblox Oof", "source": "It's a long story" },
+    { "id": "taunt", "name": "Taunt", "source": "Pizza Tower", "tags": ["note"] },
     { "id": "subaluwa", "name": "Subaluwa", "source": "Ed, Edd n Eddy" },
     { "id": "necoarc", "name": "Neco-Arc", "source": "Carnival Phantasm" },
     { "id": "samurai", "name": "Samurai Techno", "source": "Rhythm Doctor", "tags": ["note"] },
