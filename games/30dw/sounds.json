@@ -13,7 +13,7 @@
     { "id": "error", "emoji": "🚫", "name": "Error", "source": "Windows XP", "tags": ["note"] },
     { "id": "hl_health", "name": "Medkit Pickup", "source": "Half Life" },
     { "id": "hl_crowbar", "name": "Crowbar Hit", "source": "Half Life", "tags": ["note"] },
-    { "id": "hl_button", "name": "Button Press", "source": "Half Life", "tags": ["note"] },
+    { "id": "hl_button", "emoji": "🔘", "name": "Button Press", "source": "Half Life", "tags": ["note"] },
     
     { "id": "kaching", "emoji": "💰", "name": "Kaching", "source": "" },
     { "id": "bonk", "emoji": "🏏", "name": "Bonk", "source": "", "tags": ["percussion"] },
