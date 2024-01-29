@@ -11,8 +11,9 @@
     { "id": "boink", "emoji": "💢", "name": "Boink", "source": "Rhythm Heaven" },
     { "id": "fart", "emoji": "💨", "name": "Reverb Fart", "source": "", "tags": ["percussion"] },
     { "id": "error", "emoji": "🚫", "name": "Error", "source": "Windows XP", "tags": ["note"] },
-    { "id": "hl_health", "name": "Medkit Pickup", "source": "Half Life", "tags": ["note"] },
-
+    { "id": "hl_health", "name": "Medkit Pickup", "source": "Half Life" },
+    { "id": "hl_crowbar", "name": "Crowbar Hit", "source": "Half Life", "tags": ["note"] },
+    
     { "id": "kaching", "emoji": "💰", "name": "Kaching", "source": "" },
     { "id": "bonk", "emoji": "🏏", "name": "Bonk", "source": "", "tags": ["percussion"] },
     { "id": "bleep", "emoji": "🤬", "name": "Bleep", "source": "", "tags": ["note"] },
@@ -46,6 +47,8 @@
     { "id": "pan", "name": "Frying Pan", "source": "Scott the Woz", "tags": ["percussion"] },
     { "id": "recordscratch", "emoji": "💿", "name": "Record Scratch", "source": "" },
     { "id": "airhorn", "name": "Airhorn", "source": "", "tags": ["note"] },
+    { "id": "metalpipe", "name": "Metal Pipe", "source": ""  },
+    { "id": "boing", "name": "Boing", "source": "" },
     { "id": "taiko_don", "name": "Don", "source": "Taiko no Tatsujin", "tags": ["percussion"] },
     { "id": "taiko_ka", "name": "Ka", "source": "Taiko no Tatsujin", "tags": ["percussion"] },
     { "id": "dimrainsynth", "emoji": "🎹", "name": "Synth", "source": "", "tags": ["note"] },
