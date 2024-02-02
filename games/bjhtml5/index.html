@@ -1,9 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<head
+    <link rel="shortcut icon" type="image/png" href="icon.png">>
     <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/adpkifcfcacgmnggcbpbjbkdijciiigm">
     <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=9">
-    <meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no">    
+    <meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no">  
+    <link rel="shortcut icon" type="image/png" href"/icon.png">
     <title>Bejeweled</title>        
 </head>
 <style type="text/css">
@@ -290,13 +292,6 @@
                 <br /><br />Please try <a onclick="javascript:window.location = window.location">reloading the page</a>.
             </p>            
         </div>
-    </div>    
-
-    <div id="legal" class="legal" >
-        <p class="smaller">
-            <a onclick="window.open('http://tos.ea.com/legalapp/WEBPRIVACY/US/en/PC/')">Privacy Policy</a> &nbsp; | &nbsp; 
-            <a onclick="window.open('http://tos.ea.com/legalapp/WEBTERMS/US/en/PC/')">Terms of Service</a>
-        </p>
     </div>
 
     <div id="gamediv" class="gamediv" onmousedown="return false">
@@ -354,7 +349,7 @@
         
     <script type="text/javascript" src="soundmanager2.js"></script>        
 
-    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>    
+    <script type="text/javascript" src="jquery.min.js"></script>    
     <script type="text/javascript" src="Bejeweled_min.js"></script>    
     
     <script type="text/javascript">
@@ -505,7 +500,7 @@
                     aMessage = e.GetDetails();
                     aType = "loadingError";
                 }
-                gApp.SubmitStandardMetricsDict("error", { "Type": aType, "Message": aMessage, "Stack": aStack }, true, "http://errors.stats.popcap.com");
+                gApp.SubmitStandardMetricsDict("error", { "Type": aType, "Message": aMessage, "Stack": aStack }, true, "#");
                 gAlreadyFailed = true;
             }
             return !gReThrowException;
@@ -567,7 +562,7 @@
         gApp = new Game.BejApp();
         JFSExt_SetRequiresBinaryHack(false);
 
-        gApp.SetThrottlingURL("http://gats.popcap.com/bejeweled-html5.json?t=" + (new Date().getTime()));
+        gApp.SetThrottlingURL("bejeweled-html5.json?t=" + (new Date().getTime()));
         gApp.SetMetricsURL("http://stats.popcap.com");
 
         gApp.SetExceptionCallback(HandleException);
@@ -576,8 +571,7 @@
             Startup();
         }
         else {
-            gCWSPrompt = true;
-            ResizeElements();
+            Startup();
         }
         window.onresize = ResizeElements;
 
