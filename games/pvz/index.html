@@ -23,7 +23,8 @@
         player.load("plantsvszombies.swf");
       });
     </script>
-    window.RufflePlayer = window.RufflePlayer || {};
+    <script>
+      window.RufflePlayer = window.RufflePlayer || {};
 window.RufflePlayer.config = {
     // Options affecting files only
     "autoplay": "auto",
@@ -46,8 +47,10 @@ window.RufflePlayer.config = {
     "frameRate": null,
     "quality": "low",
     "splashScreen": true,
-    "preferredRenderer": webgpu,
+    "preferredRenderer": webgpu-webgl,
     "favorFlash": true,
 };
+    </script>
+    
   </body>
 </html>
