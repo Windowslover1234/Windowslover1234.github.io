@@ -11,6 +11,7 @@
     touchCurrentFirst: null,
     canvasWidth: 512,
     canvasHeight: 342,
+    canvasimage-rendering: pixelated,
     canvasScale: 1,
     canvasOffset: 0,
     zoomControls: false,
