@@ -1,0 +1,71 @@
+{
+    "name": "Blockpost",
+    "short_name": "Blockpost",
+    "start_url": "windowslover1234.github.io/games/blockpost",
+    "id": "com.windowslover1234.blockpost",
+    "description": "BLOCKPOST is a new tactical shooter from the cubic game universe by Skullcap Studios. Keeping the hurricane character of the classic online FPS, the game sets a new level of gameplay, at the junction of the most popular and relevant genres, recognized by many hardcore players of different ages around the world. Join our large friendly community and show what you can do in the first person!",
+    "background": {
+      "service_worker": "sw.js"
+    },
+    "scope": "./",
+    "icons": [
+      {
+        "src": "thumb.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any"
+      }
+    ],
+    "images": [
+      {
+        "src": "screenshots/1.jpg",
+        "sizes": "853x480",
+        "type": "image/jpg",
+        "purpose": "any"
+      }
+    ],
+    "theme_color": "#FFDC09",
+    "background_color": "#686868",
+    "display": "standalone",
+    "ms_start_compatible": true,
+    "screenshots": [
+      {
+        "src": "screenshots/2.jpg",
+        "type": "image/jpg",
+        "sizes": "853x480",
+        "form_factor": "wide"
+      },
+      {
+        "src": "screenshots/3.jpg",
+        "type": "image/jpg",
+        "sizes": "853x480",
+        "form_factor": "wide"
+      },
+      {
+        "src": "screenshots/4.jpg",
+        "type": "image/jpg",
+        "sizes": "853x480",
+        "form_factor": "wide"
+      }
+    ],
+    "display_override": [
+      "standalone",
+      "fullscreen",
+      "browser",
+      "minimal-ui",
+      "window-controls-overlay"
+    ],
+    "categories": [
+      "games"
+    ],
+    "lang": "en",
+    "dir": "auto",
+    "orientation": "landscape",
+    "edge_side_panel": {
+      "preferred_width": 0
+    },
+    "handle_links": "preferred",
+    "launch_handler": {
+      "client_mode": ["focus-existing", "auto"]
+    }
+  }
