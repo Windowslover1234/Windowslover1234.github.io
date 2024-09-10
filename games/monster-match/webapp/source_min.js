@@ -128,14 +128,6 @@ Storage.stringToHex = function(str) {
     }
     return hex;
 }
-Storage.base64ToArray = function(base64) {
-    const binaryString = window.atob(base64);
-    let array = new Uint8Array(binaryString.length);
-    for (let i = 0; i < binaryString.length; i++) {
-        array[i] = binaryString.charCodeAt(i);
-    }
-    return array;
-}
 Storage.get = function(prefix, path) {
     let base64;
     try {
