@@ -11,6 +11,7 @@
     ></div>
     <script src="../ruffle/ruffle.js"></script>
     <script>
+      window.RufflePlayer.config = {letterbox: "on"}
       window.RufflePlayer = window.RufflePlayer || {};
       window.addEventListener("load", (event) => {
         const ruffle = window.RufflePlayer.newest();
