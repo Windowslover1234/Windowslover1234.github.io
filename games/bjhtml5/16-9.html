@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head
     <link rel="shortcut icon" type="image/png" href="icon.png">>
@@ -508,7 +508,7 @@
         }
 
         function ShowHelp() {
-            window.open("http://support.popcap.com/bejeweled-html5");
+            <*/window.open("http://support.popcap.com/bejeweled-html5");*/>
         }
 
         function Startup() {
@@ -574,12 +574,12 @@
         else {
             Startup();
         }
-        window.onresize = ResizeElements;
+        window.onresize = ResizeElements();
 
         var aLeftPillar = document.getElementById('leftPillar');
-        aLeftPillar.onload = ResizeElements;
+        aLeftPillar.onload = ResizeElements();
         var aLeftPillarBot = document.getElementById('leftPillarBot');
-        aLeftPillarBot.onload = ResizeElements;
+        aLeftPillarBot.onload = ResizeElements();
     </script>
 </body>
 </html>
