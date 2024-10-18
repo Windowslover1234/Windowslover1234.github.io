@@ -522,10 +522,7 @@
                 gApp.SetDebugMode(true);
                 //gReThrowException = true;
             }
-            if (window.location.href.indexOf('nogl') != -1)
-                gApp.SetUseGL(false);
-            else
-                gApp.SetUseGL(true);
+            gApp.SetUseGL(true);
             if (HTML5Supported()) {
                 JSFExt_Init(gApp, document.getElementById('GameCanvas'));
             }
