@@ -6,7 +6,19 @@
     <link rel="icon" href="favicon.ico" />
   </head>
   <body>
-    <object xmlns="http://www.w3.org/1999/xhtml" data="windowslover1234.github.io/games/zuma/zuma.swf" height="100%" type="application/x-shockwave-flash" width="100%"><param name="movie" value="" /> </object>
     <script src="../ruffle/ruffle.js"></script>
+        <script>
+      window.RufflePlayer.config = {letterbox: "on", scale: "showAll", forceScale: "true", quality: "best"}
+      window.RufflePlayer = window.RufflePlayer || {};
+      window.addEventListener("load", (event) => {
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        const container = document.getElementById("container");
+        player.style.width = "100%";
+        player.style.height = "100%";
+        container.appendChild(player);
+        player.load("zuma.swf");
+      });
+    </script>
   </body>
 </html>
