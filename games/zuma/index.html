@@ -3,11 +3,15 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Zuma</title>
-    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="favicon.png" />
   </head>
-  <body>
+  <body style="margin: 0; padding: 0">
+    <div
+      id="container"
+      style="position: absolute; width: auto; height: auto; inset: 0"
+    ></div>
     <script src="../ruffle/ruffle.js"></script>
-        <script>
+    <script>
       window.RufflePlayer.config = {letterbox: "on", scale: "showAll", forceScale: "true", quality: "best"}
       window.RufflePlayer = window.RufflePlayer || {};
       window.addEventListener("load", (event) => {
